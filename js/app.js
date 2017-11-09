@@ -2,7 +2,6 @@
 // Declaración de variables
 var board = document.querySelector('.board-js');
 var centinel = true;
-var position;
 var count = 0;
 var winner = false;
 var c1 = document.getElementById('c1');
@@ -26,25 +25,28 @@ window.onload = function() {
 function addX(event) {
   // Colocamos la 'X' u 'O' de acuerdo al turno
   if (event.target.matches('td') && event.target.textContent === '') {
-    position = event.target.id.charAt(1);
     if (centinel) {
       event.target.textContent = 'X';
       centinel = false;
       count++;
-      alert(count);
     } else {
       event.target.textContent = 'O';
       centinel = true;
       count++;
-      alert(count);
     }
   }
 
   // llamando  a la funcion  win, en el mejor de los casos se gana con cinco jugadas y en el peor de los casos con 9
   if (count >= 5 && count <= 9) {
-    alert('Paso x mayor a 5');
+    
     win();
   }
+
+  if (count >= 9 && winner === false) {
+    
+    document.getElementById('result').innerHTML = 'EMPATE:) ';
+  }
+
 };
 
 // Declaramos la función win 
@@ -74,7 +76,7 @@ function win() {
     count = 10;
     winner = true;
   } else {
-    document.getElementById('result').innerHTML = 'EMPATE!!! ';
+    
   }
 }
 
