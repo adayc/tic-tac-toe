@@ -42,50 +42,41 @@ function addX(event) {
 
   // llamando  a la funcion  win, en el mejor de los casos se gana con cinco jugadas y en el peor de los casos con 9
   if (count >= 5 && count <= 9) {
-    // win();
-  }
-
-  if (count >= 9 && winner === false) {
-    document.getElementById('winner').innerHTML = 'EMPATE!!! ';
-    count = 1000;
+    alert('Paso x mayor a 5');
+    win();
   }
 };
 
-function win(){
-	if ((c1=="X" && c2=="X" && c3=="X") ||
-	 (c4=="X" && c5=="X" && c6=="X") ||
-	 (c7=="X" && c8=="X" && c9=="X") ||
-	 (c1=="X" && c4=="X" && c7=="X") ||
-     (c2=="X" && c5=="X" && c8=="X") ||
-     (c3=="X" && c6=="X" && c9=="X") ||
-     (c1=="X" && c5=="X" && c9=="X") ||
-     (c3=="X" && c5=="X" && c7=="X")) {
-		juga.innerHTML="Ganador: " +jugador1+"!!!";
-		cont = 1000;
-		turno = 3;
-		gana = true;
-		
-	}
-	else if((c1=="O" && c2=="O" && c3=="O") ||
-	 (c4=="O" && c5=="O" && c6=="O") ||
-	 (c7=="O" && c8=="O" && c9=="O") ||
-	 (c1=="O" && c4=="O" && c7=="O") ||
-     (c2=="O" && c5=="O" && c8=="O") ||
-     (c3=="O" && c6=="O" && c9=="O") ||
-     (c1=="O" && c5=="O" && c9=="O") ||
-     (c3=="O" && c5=="O" && c7=="O")) {
-		juga.innerHTML="Ganador: " +jugador2+"!!!";
-		cont = 1000;
-		turno = 3;
-		gana = true;
-	}
-	if (c1=="X" && c2=="X" && c3=="X"){
-			c1.style.background=gato;
-			c2.style.background=gato;
-			c3.style.background=gato;
-		}
+// Declaramos la función win 
+function win() {
+  // Declaramos todas las posibles situaciones en la que ganaria X
+  if ((c1.textContent === 'X' && c2.textContent === 'X' && c3.textContent === 'X') ||
+	 (c4.textContent === 'X' && c5.textContent === 'X' && c6.textContent === 'X') ||
+	 (c7.textContent === 'X' && c8.textContent === 'X' && c9.textContent === 'X') ||
+	 (c1.textContent === 'X' && c4.textContent === 'X' && c7.textContent === 'X') ||
+     (c2.textContent === 'X' && c5.textContent === 'X' && c8.textContent === 'X') ||
+     (c3.textContent === 'X' && c6.textContent === 'X' && c9.textContent === 'X') ||
+     (c1.textContent === 'X' && c5.textContent === 'X' && c9.textContent === 'X') ||
+     (c3.textContent === 'X' && c5.textContent === 'X' && c7.textContent === 'X')) {
+	 document.getElementById('result').innerHTML = 'Ganador: X ';
+	 count = 10;
+    winner = true;
+    // Declaramos todas las posibles situaciones en la que ganaria O
+  } else if ((c1.textContent === 'O' && c2.textContent === 'O' && c3.textContent === 'O') ||
+	 (c4.textContent === 'O' && c5.textContent === 'O' && c6.textContent === 'O') ||
+	 (c7.textContent === 'O' && c8.textContent === 'O' && c9.textContent === 'O') ||
+	 (c1.textContent === 'O' && c4.textContent === 'O' && c7.textContent === 'O') ||
+     (c2.textContent === 'O' && c5.textContent === 'O' && c8.textContent === 'O') ||
+     (c3.textContent === 'O' && c6.textContent === 'O' && c9.textContent === 'O') ||
+     (c1.textContent === 'O' && c5.textContent === 'O' && c9.textContent === 'O') ||
+     (c.textContent3 === 'O' && c5.textContent === 'O' && c7.textContent === 'O')) {
+    document.getElementById('result').innerHTML = 'Ganador: O ';
+    count = 10;
+    winner = true;
+  } else {
+    document.getElementById('result').innerHTML = 'EMPATE!!! ';
+  }
 }
-
 
 
 function reset() {
