@@ -23,7 +23,13 @@
  /*Declaramos la fuente para toda la página web*/
 body
 {
-    font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    
+    background-image: url('../assets/imgs/unicornio.jpg');
+    background-position: right; /*Posicionamos el fondo en el centro*/
+    background-repeat:no-repeat;/*Indicamos que no se repita el fondo*/
+    background-size: 25%;/*Ajustamos el tamaño de la imagen de fondo*/
+    
+    
 }
 
 .board{
@@ -31,14 +37,53 @@ body
     border-collapse:collapse;
 }
 .board td{
-    width:100px;
+    width: 100px;
     height: 100px;
-    border:  1px solid black;
+    border-radius: 9px;
+    border-style: ridge;
+    border-width: 5px;
     text-align: center;
-    font-size: 30px;
+    background-color: #99f;
+    font-size: 65px;
+    font-family: cursive;
 }
 
 .board td:hover{
-   background-color: gray;
+   background-color: aquamarine;
+   
+   max-width: 100%;
+   
 }
 
+
+/*Resetear*/
+
+ #contenedor-button{
+     text-align: center
+ }
+ 
+  button{
+    display: inline-block;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-weight: 900;
+    border: 4px outset aquamarine;
+    background-color: aquamarine;
+  }
+
+
+  #container-result{
+    
+    border-radius: 8px;
+    text-align:center;
+    
+   
+   
+    
+    border-style: dotted;
+  }
+  #container-result h1{
+    text-align: center;
+  }
